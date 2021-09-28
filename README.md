@@ -23,7 +23,7 @@ This role has been tested on:
 Role Variables
 --------------
 
-Distribution dependet variables are placed in corresponding files inside "vars" directory.
+Distribution dependent variables are placed in corresponding files inside "vars" directory.
 They include links to docker repositories and GPG keys.
 
 Example Playbook
@@ -45,7 +45,7 @@ BSD
 Author Information
 ------------------
 
-Sergiusz Parchatko
-sergiusz.parchatko@gmail.com
-https://github.com/shumitu
+Sergiusz Parchatko  
+sergiusz.parchatko@gmail.com  
+https://github.com/shumitu  
 

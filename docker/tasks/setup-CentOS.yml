@@ -21,8 +21,9 @@
 
 - name: Install Docker Engine.
   yum:
-   - docker-ce
-   - docker-ce-cli
-   - containerd.io
+    name:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
   become: yes
   notify: Start and enable docker engine

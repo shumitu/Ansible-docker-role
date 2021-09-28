@@ -3,7 +3,7 @@ galaxy_info:
   author: Sergiusz Parchatko
   description: Simple ansible role to install docker on various linux distros
 
-  license: BSD-3-Clause
+  license: BSD-2-Clause
 
   min_ansible_version: 2.9
   platforms:

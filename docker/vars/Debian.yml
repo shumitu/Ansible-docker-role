@@ -1,0 +1,3 @@
+---
+# Link to Debian GPG key 
+gpg_key_url: "https://download.docker.com/linux/debian/gpg"

@@ -1,2 +1,26 @@
 ---
-# tasks file for docker
+# Include vars for specific OS distribution
+- name: Include variables for CentOS / Fedora / Ubuntu / Debian distributions.
+  include_vars: "{{ ansible_distribution }}.yml"
+  when: ansible_distribution == "CentOS" or
+        ansible_distribution == "Fedora" or
+        ansible_distribution == "Ubuntu" or
+        ansible_distribution == "Debian"
+
+- name: Include variables for RHEL distribution
+  include_vars: "Redhat.yml"
+  when: ansible_distribution == "RedHat" or
+        ansible_distribution == "Red Hat Enterprise Linux"
+
+# Include tasks for specific OS distribution
+- name: Include tasks for CentOS / Fedora / Ubuntu / Debian distributions.
+  include_tasks: "setup-{{ ansible_distribution }}.yml"
+  when: ansible_distribution == "CentOS" or
+        ansible_distribution == "Fedora" or
+        ansible_distribution == "Ubuntu" or
+        ansible_distribution == "Debian"
+
+- name: Include tasks for RHEL distribution
+  include_vars: "setup-Redhat.yml"
+  when: ansible_distribution == "RedHat" or
+        ansible_distribution == "Red Hat Enterprise Linux"

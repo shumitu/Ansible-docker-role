@@ -1,2 +1,6 @@
 ---
-# handlers file for docker
+- name: Start and enable docker engine
+  service:
+    name: docker
+    state: started
+    enabled: yes

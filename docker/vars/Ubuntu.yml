@@ -1,3 +1,4 @@
 ---
 # Link to Ubuntu GPG key
 gpg_key_url: "https://download.docker.com/linux/ubuntu/gpg"
+docker_download_url: "https://download.docker.com/linux/ubuntu"

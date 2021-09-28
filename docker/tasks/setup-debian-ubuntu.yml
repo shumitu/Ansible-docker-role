@@ -1,0 +1,61 @@
+---
+- name: Remove old versions of docker packages.
+  apt:
+    name:
+       - docker
+       - docker-engine
+       - docker.io
+       - containerd
+       - runc
+    state: removed
+  become: yes
+
+- name: Update apt cache if needed.
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+- name: Install packages required for docker repository.
+  apt:
+    name:
+      - apt-transport-https
+      - ca-certificates
+      - curl 
+      - gnupg
+      - lsb-release
+    state: present
+  become: yes 
+
+- name: Add GPG apt key.
+  apt_key:
+    url: "{{ gpg_key_url }}"
+    keyring: "{{ gpg_key_location }}"
+    state: present
+  become: yes
+
+- name: Setup stable docker repository.
+  lineinfile:
+    path: "/etc/apt/sources.list.d/docker.list"
+    line: "deb [arch=amd64 signed-by={{ gpg_key_location }}] {{ docker_download_url }} {{ ansible_distribution_release }} stable"
+    state: present
+    create: yes
+    owner: root 
+    group: root 
+    mode: "644"
+  become: yes
+
+- name: Update apt cache if needed once again.
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes 
+
+- name: Install Docker Engine.
+  apt:
+    name:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
+  become: yes
+  notify: Start and enable docker engine

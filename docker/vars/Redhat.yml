@@ -1,3 +1,4 @@
 ---
 # Link to docker repository
-docker_repo: "https://download.docker.com/linux/rhel/docker-ce.repo"
+docker_rhel_repo: "https://download.docker.com/linux/rhel/docker-ce.repo"
+docker_centos_repo: "https://download.docker.com/linux/centos/docker-ce.repo"

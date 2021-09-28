@@ -1,0 +1,31 @@
+---
+- name: Remove old versions of docker packages.
+  yum:
+    name:
+       - docker
+       - docker-client
+       - docker-client-latest
+       - docker-common
+       - docker-latest
+       - docker-latest-logrotate
+       - docker-logrotate 
+       - docker-engine
+       - podman
+       - runc
+    state: removed
+  become: yes
+
+- name: Add Docker yum repository.
+  get_url:
+    url: "{{ docker_centos_repo if ansible_distribution == 'CentOS' else docker_rhel_repo }}"
+    dest: "/etc/yum.repos.d/docker-ce.repo"
+  become: yes
+
+- name: Install Docker Engine.
+  yum:
+    name:
+       - docker-ce
+       - docker-ce-cli
+       - containerd.io
+  become: yes
+  notify: Start and enable docker engine

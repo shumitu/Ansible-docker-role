@@ -1,5 +1,0 @@
----
-# Common GPG key footprint
-gpg_key_footprint: "060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35"
-# GPG key location
-gpg_key_location: "/usr/share/keyrings/docker-archive-keyring.gpg"

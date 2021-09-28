@@ -1,0 +1,3 @@
+---
+# GPG key location
+gpg_key_location: "/usr/share/keyrings/docker-archive-keyring.gpg"

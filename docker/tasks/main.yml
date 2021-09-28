@@ -20,7 +20,7 @@
         ansible_distribution == "Debian"
 
 - name: Include tasks for CentOS / RHEL distribution
-  include_tasks: "Redhat.yml"
+  include_tasks: "setup-Redhat.yml"
   when: ansible_distribution == "RedHat" or
         ansible_distribution == "Red Hat Enterprise Linux" or
         ansible_distribution == "CentOS" 

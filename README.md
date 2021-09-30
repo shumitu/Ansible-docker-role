@@ -1,5 +1,6 @@
 Basic ansible docker role
 =========
+[![CI](https://github.com/shumitu/Ansible-docker-role/actions/workflows/ci.yml/badge.svg)](https://github.com/shumitu/Ansible-docker-role/actions/workflows/ci.yml)
 
 Simple ansible role created to deploy docker on various linux distributions.
 This role installs docker with required dependencies and starts docker service afterwards.

@@ -1,6 +1,6 @@
 ---
 - name: Remove old versions of docker packages.
-  yum:
+  package:
     name:
        - docker
        - docker-client
@@ -13,7 +13,7 @@
        - docker-engine-selinux
        - podman
        - runc
-    state: removed
+    state: absent
   become: yes
 
 - name: Add Docker yum repository.
@@ -24,7 +24,7 @@
   become: yes
 
 - name: Install Docker Engine.
-  yum:
+  package:
     name:
        - docker-ce
        - docker-ce-cli

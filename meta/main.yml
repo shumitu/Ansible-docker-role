@@ -1,3 +1,4 @@
+---
 galaxy_info:
   role_name: docker
   author: Sergiusz Parchatko
@@ -25,4 +26,4 @@ galaxy_info:
       - focal
       - hirsute
 
-  galaxy_tags: ['docker', 'docker-compose', 'container']
+  galaxy_tags: ['docker', 'container', 'EL', 'Debian', 'Ubuntu', 'Fedora']

@@ -8,8 +8,16 @@ jobs:
     steps:
       - name: "Checkout repository"
         uses: actions/checkout@v2
+
       - name: "Call Yamllint on all YAML files"
         uses: ibiqlik/action-yamllint@v3
+        with:
+          file_or_dir: |
+            . 
+            tasks/setup-*.yml
+            handlers/main.yml
+          config_file: .yamllint.yml
+
       - name: "Call ansible lint on playbooks"
         uses: ansible/ansible-lint-action@master
         with:

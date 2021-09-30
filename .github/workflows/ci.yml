@@ -16,7 +16,7 @@ jobs:
             . 
             tasks/setup-*.yml
             handlers/main.yml
-          config_file: .yamllint.yml
+          config_file: .github/workflows/.yamllint.yml
 
       - name: "Call ansible lint on playbooks"
         uses: ansible/ansible-lint-action@master

@@ -1,0 +1,21 @@
+---
+name: CI
+on: [push, pull_request]
+
+jobs:
+  lint-all-yaml-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v2
+      - name: "Call Yamllint on all YAML files"
+        uses: ibiqlik/action-yamllint@v3
+      - name: "Call ansible lint on playbooks"
+        uses: ansible/ansible-lint-action@master
+        with:
+          targets: | 
+            defaults/main.yml
+            handlers/main.yml
+            meta/main.yml
+            tasks/main.yml
+           

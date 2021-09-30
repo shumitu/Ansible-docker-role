@@ -8,22 +8,22 @@ galaxy_info:
 
   min_ansible_version: 2.4
   platforms:
-  - name: EL
-    versions:
-      - 7
-      - 8
-  - name: Debian
-    versions:
-      - bullseye
-      - buster
-  - name: Fedora
-    versions:
-      - 33
-      - 34
-  - name: Ubuntu
-    versions:
-      - bionic
-      - focal
-      - hirsute
+    - name: EL
+      versions:
+        - 7
+        - 8
+    - name: Debian
+      versions:
+        - bullseye
+        - buster
+    - name: Fedora
+      versions:
+        - 33
+        - 34
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+        - hirsute
 
   galaxy_tags: ['docker', 'container', 'EL', 'Debian', 'Ubuntu', 'Fedora']

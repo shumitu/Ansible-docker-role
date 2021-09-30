@@ -2,17 +2,17 @@
 - name: Remove old versions of docker packages.
   package:
     name:
-       - docker
-       - docker-client
-       - docker-client-latest
-       - docker-common
-       - docker-latest
-       - docker-latest-logrotate
-       - docker-logrotate 
-       - docker-engine
-       - docker-engine-selinux
-       - podman
-       - runc
+      - docker
+      - docker-client
+      - docker-client-latest
+      - docker-common
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
+      - docker-engine
+      - docker-engine-selinux
+      - podman
+      - runc
     state: absent
   become: yes
 
@@ -26,8 +26,8 @@
 - name: Install Docker Engine.
   package:
     name:
-       - docker-ce
-       - docker-ce-cli
-       - containerd.io
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
   become: yes
   notify: Start and enable docker engine

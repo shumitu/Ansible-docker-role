@@ -45,7 +45,7 @@
     mode: "644"
   become: yes
 
-- name: Update apt cache if needed once again.
+- name: Update apt cache to load added repository.
   apt:
     update_cache: yes
   become: yes 

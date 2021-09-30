@@ -20,6 +20,7 @@
   get_url:
     url: "{{ docker_repo }}"
     dest: "/etc/yum.repos.d/docker-ce.repo"
+    force: yes
   become: yes
 
 - name: Install Docker Engine.

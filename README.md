@@ -1,7 +1,7 @@
-Ansible docker role
+Basic ansible docker role
 =========
 
-Simple role created to deploy docker on various linux distributions.
+Simple ansible role created to deploy docker on various linux distributions.
 This role installs docker with required dependencies and starts docker service afterwards.
 
 Supported Linux distributions
@@ -34,7 +34,7 @@ Example playbook used to run above role is presented below.
 - name: Run docker role
   hosts: all
   roles:
-    - role: shumitu.docker
+    - role: docker
 ```
 
 License

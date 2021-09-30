@@ -10,6 +10,7 @@
        - docker-latest-logrotate
        - docker-logrotate 
        - docker-engine
+       - docker-engine-selinux
        - podman
        - runc
     state: removed
@@ -17,8 +18,7 @@
 
 - name: Add Docker yum repository.
   get_url:
-    # url: "{{ docker_centos_repo if ansible_distribution == 'CentOS' else docker_rhel_repo }}" // rhel docker repo seems to be broken
-    url: "{{ docker_centos_repo }}"
+    url: "{{ docker_repo }}"
     dest: "/etc/yum.repos.d/docker-ce.repo"
   become: yes
 

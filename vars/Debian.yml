@@ -1,4 +1,4 @@
 ---
-# Link to Debian GPG key 
-gpg_key_url: "https://download.docker.com/linux/debian/gpg"
-docker_download_url: "https://download.docker.com/linux/debian"
+# Link to distribution specific GPG key 
+gpg_key_url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}/gpg"
+docker_download_url: "https://download.docker.com/linux/{{ ansible_distribution | lower }}"
